@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bub-Je-p6S">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--发现-->
+        <scene sceneID="4dr-qr-Jdg">
+            <objects>
+                <tableViewController id="X0u-46-g6w" customClass="DiscoverTableViewController" customModule="Swift_SinaDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bb3-qg-xmG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="X0u-46-g6w" id="vLp-TQ-gFE"/>
+                            <outlet property="delegate" destination="X0u-46-g6w" id="hP3-iP-49C"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="发现" id="rXS-Oz-cXx"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="50Y-rL-Tr7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278" y="705"/>
+        </scene>
+        <!--发现-->
+        <scene sceneID="SnT-fc-mI5">
+            <objects>
+                <navigationController id="bub-Je-p6S" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="发现" image="放大镜-2" selectedImage="放大镜" id="IQY-yR-Cxq"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="K6v-0e-PaQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="X0u-46-g6w" kind="relationship" relationship="rootViewController" id="HUZ-MV-3aL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZaX-tR-GSP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278" y="-35"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="放大镜" width="25" height="25"/>
+        <image name="放大镜-2" width="25" height="25"/>
+    </resources>
+</document>
