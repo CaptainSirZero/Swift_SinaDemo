@@ -7,9 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1107753DFFDF31DD8D505934 /* Pods_Swift_SinaDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C89C5967ADEB31B6D06A651 /* Pods_Swift_SinaDemo.framework */; };
+		E4B04FCF1F0FBC5B004A318E /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B04FCE1F0FBC5B004A318E /* UIBarButtonItem-Extension.swift */; };
+		E4B04FD21F107657004A318E /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B04FD11F107657004A318E /* TitleButton.swift */; };
+		E4B04FD61F108254004A318E /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B04FD41F108254004A318E /* PopoverViewController.swift */; };
+		E4B04FD71F108254004A318E /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B04FD51F108254004A318E /* PopoverViewController.xib */; };
+		E4B04FD91F10B934004A318E /* PresentatinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B04FD81F10B934004A318E /* PresentatinController.swift */; };
+		E4B04FDB1F10D4F0004A318E /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B04FDA1F10D4F0004A318E /* PopoverAnimator.swift */; };
+		E4B0501B1F13726B004A318E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B0501A1F13726B004A318E /* Assets.xcassets */; };
+		E4B0501F1F137565004A318E /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B0501D1F137565004A318E /* OAuthViewController.swift */; };
+		E4B050201F137565004A318E /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B0501E1F137565004A318E /* OAuthViewController.xib */; };
+		E4B050221F13A24B004A318E /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B050211F13A24B004A318E /* Common.swift */; };
+		E4B050241F13B101004A318E /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B050231F13B101004A318E /* NetworkTool.swift */; };
+		E4B050261F1450F7004A318E /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B050251F1450F7004A318E /* UserAccount.swift */; };
+		E4B050281F14BA48004A318E /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B050271F14BA48004A318E /* UserAccountViewModel.swift */; };
+		E4B0502C1F14C8C6004A318E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B0502A1F14C8C6004A318E /* WelcomeViewController.swift */; };
+		E4B0502D1F14C8C6004A318E /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B0502B1F14C8C6004A318E /* WelcomeViewController.xib */; };
+		E4B050301F150570004A318E /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B0502F1F150570004A318E /* Status.swift */; };
+		E4B050741F15D58D004A318E /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B050731F15D58D004A318E /* NSDate-Extension.swift */; };
+		E4B050761F15FB4C004A318E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B050751F15FB4C004A318E /* User.swift */; };
+		E4B050781F160C55004A318E /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B050771F160C55004A318E /* StatusViewModel.swift */; };
+		E4B0507A1F161AFB004A318E /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B050791F161AFB004A318E /* HomeViewCell.swift */; };
 		E4C39FF31F0793E200FE3410 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C39FF21F0793E200FE3410 /* AppDelegate.swift */; };
 		E4C39FF81F0793E200FE3410 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C39FF61F0793E200FE3410 /* Main.storyboard */; };
-		E4C39FFA1F0793E200FE3410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4C39FF91F0793E200FE3410 /* Assets.xcassets */; };
 		E4C39FFD1F0793E200FE3410 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C39FFB1F0793E200FE3410 /* LaunchScreen.storyboard */; };
 		E4C3A0081F0793E200FE3410 /* Swift_SinaDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C3A0071F0793E200FE3410 /* Swift_SinaDemoTests.swift */; };
 		E4C3A0131F0793E200FE3410 /* Swift_SinaDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C3A0121F0793E200FE3410 /* Swift_SinaDemoUITests.swift */; };
@@ -47,10 +67,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4FF44213E741C426C64703AD /* Pods-Swift_SinaDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_SinaDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift_SinaDemo/Pods-Swift_SinaDemo.release.xcconfig"; sourceTree = "<group>"; };
+		5C89C5967ADEB31B6D06A651 /* Pods_Swift_SinaDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_SinaDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6E28178497DE2C5CB094C99 /* Pods-Swift_SinaDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_SinaDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift_SinaDemo/Pods-Swift_SinaDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E4B04FCE1F0FBC5B004A318E /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem-Extension.swift"; path = "../UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		E4B04FD11F107657004A318E /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		E4B04FD41F108254004A318E /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		E4B04FD51F108254004A318E /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
+		E4B04FD81F10B934004A318E /* PresentatinController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentatinController.swift; sourceTree = "<group>"; };
+		E4B04FDA1F10D4F0004A318E /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
+		E4B0501A1F13726B004A318E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4B0501D1F137565004A318E /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		E4B0501E1F137565004A318E /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
+		E4B050211F13A24B004A318E /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		E4B050231F13B101004A318E /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
+		E4B050251F1450F7004A318E /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		E4B050271F14BA48004A318E /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
+		E4B0502A1F14C8C6004A318E /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		E4B0502B1F14C8C6004A318E /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		E4B0502F1F150570004A318E /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		E4B050731F15D58D004A318E /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
+		E4B050751F15FB4C004A318E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E4B050771F160C55004A318E /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
+		E4B050791F161AFB004A318E /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		E4C39FEF1F0793E200FE3410 /* Swift_SinaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_SinaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C39FF21F0793E200FE3410 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4C39FF71F0793E200FE3410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E4C39FF91F0793E200FE3410 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		E4C39FFC1F0793E200FE3410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4C39FFE1F0793E200FE3410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4C3A0031F0793E200FE3410 /* Swift_SinaDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swift_SinaDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,8 +111,8 @@
 		E4C3A0841F09F04400FE3410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
 		E4C3A0861F09F05400FE3410 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../Profile.storyboard; sourceTree = "<group>"; };
 		E4C3A0891F09F41A00FE3410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PlaceHolde.storyboard; sourceTree = "<group>"; };
-		E4C3A08D1F0A295400FE3410 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
-		E4C3A0901F0A67CB00FE3410 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		E4C3A08D1F0A295400FE3410 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton-Extension.swift"; path = "../UIButton-Extension.swift"; sourceTree = "<group>"; };
+		E4C3A0901F0A67CB00FE3410 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableViewController.swift; path = ../../Visitor/BaseTableViewController.swift; sourceTree = "<group>"; };
 		E4C3A0921F0A698E00FE3410 /* VistitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistitorView.swift; sourceTree = "<group>"; };
 		E4C3A0941F0A699900FE3410 /* VistitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VistitorView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1107753DFFDF31DD8D505934 /* Pods_Swift_SinaDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +143,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF47A7347121BC2B950B928B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6E28178497DE2C5CB094C99 /* Pods-Swift_SinaDemo.debug.xcconfig */,
+				4FF44213E741C426C64703AD /* Pods-Swift_SinaDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E32EE4463FC9C7A73BCCFF07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C89C5967ADEB31B6D06A651 /* Pods_Swift_SinaDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4B04FD01F107636004A318E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E4B050731F15D58D004A318E /* NSDate-Extension.swift */,
+				E4C3A08D1F0A295400FE3410 /* UIButton-Extension.swift */,
+				E4B04FCE1F0FBC5B004A318E /* UIBarButtonItem-Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E4B04FD31F108243004A318E /* UIPopover */ = {
+			isa = PBXGroup;
+			children = (
+				E4B04FD41F108254004A318E /* PopoverViewController.swift */,
+				E4B04FD51F108254004A318E /* PopoverViewController.xib */,
+				E4B04FD81F10B934004A318E /* PresentatinController.swift */,
+				E4B04FDA1F10D4F0004A318E /* PopoverAnimator.swift */,
+			);
+			path = UIPopover;
+			sourceTree = "<group>";
+		};
+		E4B0501C1F13734C004A318E /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				E4B0501E1F137565004A318E /* OAuthViewController.xib */,
+				E4B0501D1F137565004A318E /* OAuthViewController.swift */,
+				E4B050251F1450F7004A318E /* UserAccount.swift */,
+				E4B050271F14BA48004A318E /* UserAccountViewModel.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		E4B050291F14C567004A318E /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				E4B0502B1F14C8C6004A318E /* WelcomeViewController.xib */,
+				E4B0502A1F14C8C6004A318E /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		E4B0502E1F1504BE004A318E /* HomeModel */ = {
+			isa = PBXGroup;
+			children = (
+				E4B0502F1F150570004A318E /* Status.swift */,
+				E4B050751F15FB4C004A318E /* User.swift */,
+				E4B050771F160C55004A318E /* StatusViewModel.swift */,
+			);
+			path = HomeModel;
+			sourceTree = "<group>";
+		};
 		E4C39FE61F0793E200FE3410 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +218,8 @@
 				E4C3A0061F0793E200FE3410 /* Swift_SinaDemoTests */,
 				E4C3A0111F0793E200FE3410 /* Swift_SinaDemoUITests */,
 				E4C39FF01F0793E200FE3410 /* Products */,
+				AF47A7347121BC2B950B928B /* Pods */,
+				E32EE4463FC9C7A73BCCFF07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,13 +237,12 @@
 			isa = PBXGroup;
 			children = (
 				E4C39FF21F0793E200FE3410 /* AppDelegate.swift */,
-				E4C3A08B1F09F47F00FE3410 /* Resource */,
-				E4C3A08F1F0A67B900FE3410 /* Visitor */,
 				E4C3A08C1F0A293C00FE3410 /* Tools */,
 				E4C3A0201F079B8500FE3410 /* Classes */,
 				E4C39FF61F0793E200FE3410 /* Main.storyboard */,
 				E4C39FFB1F0793E200FE3410 /* LaunchScreen.storyboard */,
 				E4C39FFE1F0793E200FE3410 /* Info.plist */,
+				E4C3A08B1F09F47F00FE3410 /* Resource */,
 			);
 			path = Swift_SinaDemo;
 			sourceTree = "<group>";
@@ -177,9 +289,11 @@
 		E4C3A0221F079B8500FE3410 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				E4C3A0291F079E0C00FE3410 /* HomeTableViewController.swift */,
-				E4C3A0961F0B279600FE3410 /* New Group */,
+				E4B0502E1F1504BE004A318E /* HomeModel */,
+				E4B04FD31F108243004A318E /* UIPopover */,
 				E4C3A07E1F09EFDF00FE3410 /* Home.storyboard */,
+				E4C3A0291F079E0C00FE3410 /* HomeTableViewController.swift */,
+				E4B050791F161AFB004A318E /* HomeViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -187,7 +301,11 @@
 		E4C3A0231F079B8500FE3410 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E4B050291F14C567004A318E /* Welcome */,
+				E4B0501C1F13734C004A318E /* OAuth */,
+				E4C3A08F1F0A67B900FE3410 /* Visitor */,
 				E4C3A0271F079D3600FE3410 /* MainViewController.swift */,
+				E4C3A0901F0A67CB00FE3410 /* BaseTableViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -213,8 +331,8 @@
 		E4C3A08B1F09F47F00FE3410 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E4B0501A1F13726B004A318E /* Assets.xcassets */,
 				E4C3A0881F09F41A00FE3410 /* PlaceHolde.storyboard */,
-				E4C39FF91F0793E200FE3410 /* Assets.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -222,7 +340,10 @@
 		E4C3A08C1F0A293C00FE3410 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				E4C3A08D1F0A295400FE3410 /* UIButton-Extension.swift */,
+				E4B04FD01F107636004A318E /* Extension */,
+				E4B04FD11F107657004A318E /* TitleButton.swift */,
+				E4B050231F13B101004A318E /* NetworkTool.swift */,
+				E4B050211F13A24B004A318E /* Common.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -230,18 +351,11 @@
 		E4C3A08F1F0A67B900FE3410 /* Visitor */ = {
 			isa = PBXGroup;
 			children = (
-				E4C3A0901F0A67CB00FE3410 /* BaseTableViewController.swift */,
 				E4C3A0921F0A698E00FE3410 /* VistitorView.swift */,
 				E4C3A0941F0A699900FE3410 /* VistitorView.xib */,
 			);
-			path = Visitor;
-			sourceTree = "<group>";
-		};
-		E4C3A0961F0B279600FE3410 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
+			name = Visitor;
+			path = ../../Visitor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,9 +365,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4C3A0171F0793E200FE3410 /* Build configuration list for PBXNativeTarget "Swift_SinaDemo" */;
 			buildPhases = (
+				7AB6683EEF172AF4D70310FE /* [CP] Check Pods Manifest.lock */,
 				E4C39FEB1F0793E200FE3410 /* Sources */,
 				E4C39FEC1F0793E200FE3410 /* Frameworks */,
 				E4C39FED1F0793E200FE3410 /* Resources */,
+				438B34FBA562F0EBFEA8881D /* [CP] Embed Pods Frameworks */,
+				3B9F33A7E46E2E2B5AEBD1EE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -356,9 +473,12 @@
 			files = (
 				E4C39FFD1F0793E200FE3410 /* LaunchScreen.storyboard in Resources */,
 				E4C3A0951F0A699900FE3410 /* VistitorView.xib in Resources */,
-				E4C39FFA1F0793E200FE3410 /* Assets.xcassets in Resources */,
 				E4C3A0821F09F02D00FE3410 /* Message.storyboard in Resources */,
+				E4B04FD71F108254004A318E /* PopoverViewController.xib in Resources */,
+				E4B0501B1F13726B004A318E /* Assets.xcassets in Resources */,
+				E4B0502D1F14C8C6004A318E /* WelcomeViewController.xib in Resources */,
 				E4C39FF81F0793E200FE3410 /* Main.storyboard in Resources */,
+				E4B050201F137565004A318E /* OAuthViewController.xib in Resources */,
 				E4C3A0801F09EFDF00FE3410 /* Home.storyboard in Resources */,
 				E4C3A08A1F09F41A00FE3410 /* PlaceHolde.storyboard in Resources */,
 				E4C3A0871F09F05400FE3410 /* Profile.storyboard in Resources */,
@@ -382,20 +502,84 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3B9F33A7E46E2E2B5AEBD1EE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift_SinaDemo/Pods-Swift_SinaDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		438B34FBA562F0EBFEA8881D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift_SinaDemo/Pods-Swift_SinaDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AB6683EEF172AF4D70310FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E4C39FEB1F0793E200FE3410 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4B050221F13A24B004A318E /* Common.swift in Sources */,
+				E4B0502C1F14C8C6004A318E /* WelcomeViewController.swift in Sources */,
+				E4B050301F150570004A318E /* Status.swift in Sources */,
+				E4B04FCF1F0FBC5B004A318E /* UIBarButtonItem-Extension.swift in Sources */,
+				E4B050261F1450F7004A318E /* UserAccount.swift in Sources */,
 				E4C3A0301F079E2E00FE3410 /* ProfileTableViewController.swift in Sources */,
 				E4C3A08E1F0A295400FE3410 /* UIButton-Extension.swift in Sources */,
+				E4B050281F14BA48004A318E /* UserAccountViewModel.swift in Sources */,
 				E4C3A0931F0A698E00FE3410 /* VistitorView.swift in Sources */,
+				E4B0501F1F137565004A318E /* OAuthViewController.swift in Sources */,
+				E4B04FD61F108254004A318E /* PopoverViewController.swift in Sources */,
+				E4B04FD21F107657004A318E /* TitleButton.swift in Sources */,
+				E4B050741F15D58D004A318E /* NSDate-Extension.swift in Sources */,
 				E4C3A0911F0A67CB00FE3410 /* BaseTableViewController.swift in Sources */,
+				E4B050241F13B101004A318E /* NetworkTool.swift in Sources */,
+				E4B04FD91F10B934004A318E /* PresentatinController.swift in Sources */,
+				E4B050781F160C55004A318E /* StatusViewModel.swift in Sources */,
+				E4B0507A1F161AFB004A318E /* HomeViewCell.swift in Sources */,
+				E4B04FDB1F10D4F0004A318E /* PopoverAnimator.swift in Sources */,
 				E4C3A02A1F079E0C00FE3410 /* HomeTableViewController.swift in Sources */,
 				E4C39FF31F0793E200FE3410 /* AppDelegate.swift in Sources */,
 				E4C3A02C1F079E1500FE3410 /* MessageTableViewController.swift in Sources */,
 				E4C3A02E1F079E2600FE3410 /* DiscoverTableViewController.swift in Sources */,
 				E4C3A0281F079D3600FE3410 /* MainViewController.swift in Sources */,
+				E4B050761F15FB4C004A318E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +756,7 @@
 		};
 		E4C3A0181F0793E200FE3410 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6E28178497DE2C5CB094C99 /* Pods-Swift_SinaDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -579,6 +764,8 @@
 				INFOPLIST_FILE = Swift_SinaDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chengbo.Swift-SinaDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -587,6 +774,7 @@
 		};
 		E4C3A0191F0793E200FE3410 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FF44213E741C426C64703AD /* Pods-Swift_SinaDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -677,6 +865,7 @@
 				E4C3A0191F0793E200FE3410 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4C3A01A1F0793E200FE3410 /* Build configuration list for PBXNativeTarget "Swift_SinaDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -685,6 +874,7 @@
 				E4C3A01C1F0793E200FE3410 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4C3A01D1F0793E200FE3410 /* Build configuration list for PBXNativeTarget "Swift_SinaDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -693,6 +883,7 @@
 				E4C3A01F1F0793E200FE3410 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

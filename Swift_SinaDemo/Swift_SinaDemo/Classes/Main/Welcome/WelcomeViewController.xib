@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="Swift_SinaDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="avatar" destination="Mzx-aX-vMa" id="oKu-gF-qyK"/>
+                <outlet property="avatarBottomHeight" destination="AKI-gT-VSX" id="i6J-ov-efu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="464" height="729"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome" translatesAutoresizingMaskIntoConstraints="NO" id="70O-5y-CgY">
+                    <rect key="frame" x="0.0" y="0.0" width="464" height="729"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="Mzx-aX-vMa">
+                    <rect key="frame" x="187" y="489" width="90" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Mzx-aX-vMa" secondAttribute="height" id="HMv-zf-epZ"/>
+                        <constraint firstAttribute="width" constant="90" id="wLQ-fM-jj7"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bn8-Ku-tKA">
+                    <rect key="frame" x="197.5" y="599" width="69.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Mzx-aX-vMa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="63Q-Ov-xes"/>
+                <constraint firstAttribute="bottom" secondItem="Mzx-aX-vMa" secondAttribute="bottom" constant="150" id="AKI-gT-VSX"/>
+                <constraint firstAttribute="bottom" secondItem="70O-5y-CgY" secondAttribute="bottom" id="EhY-jI-py9"/>
+                <constraint firstAttribute="trailing" secondItem="70O-5y-CgY" secondAttribute="trailing" id="It6-E4-BiF"/>
+                <constraint firstItem="Bn8-Ku-tKA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KIQ-5K-hvv"/>
+                <constraint firstItem="Bn8-Ku-tKA" firstAttribute="top" secondItem="Mzx-aX-vMa" secondAttribute="bottom" constant="20" id="PSX-A7-cLf"/>
+                <constraint firstItem="70O-5y-CgY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Sol-Ei-iYx"/>
+                <constraint firstItem="70O-5y-CgY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sNG-gI-kkR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="107" y="17.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="avatar_default" width="90" height="90"/>
+        <image name="welcome" width="375" height="667"/>
+    </resources>
+</document>

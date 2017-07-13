@@ -62,6 +62,8 @@
                 <constraint firstItem="7jc-3h-qbK" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pfY-zO-9rF"/>
             </constraints>
             <connections>
+                <outlet property="loginBtn" destination="Hwf-mZ-qVZ" id="wCd-yS-lde"/>
+                <outlet property="registerBtn" destination="XTo-zd-oGR" id="fAl-NN-3WA"/>
                 <outlet property="rotationView" destination="7jc-3h-qbK" id="v1s-gL-ukC"/>
                 <outlet property="tipLabel" destination="ECF-f5-CQs" id="03u-Hk-tLG"/>
             </connections>

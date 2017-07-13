@@ -22,6 +22,8 @@ class VistitorView: UIView {
     @IBOutlet weak var rotationView: UIImageView!
     @IBOutlet weak var tipLabel: UILabel!
 
+    @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var loginBtn: UIButton!
     
     // MARK:- UI设置
     func configurationVisitorView(imageName : String, title : String) {
@@ -38,7 +40,7 @@ class VistitorView: UIView {
         // 2. 设置动画的属性
         rotationAnim.fromValue = 0
         rotationAnim.toValue = Double.pi*2
-        rotationAnim.duration = 5
+        rotationAnim.duration = 3
         rotationAnim.repeatCount = MAXFLOAT
         /* When true, the animation is removed from the render tree once its
          * active duration has passed. Defaults to YES. */
