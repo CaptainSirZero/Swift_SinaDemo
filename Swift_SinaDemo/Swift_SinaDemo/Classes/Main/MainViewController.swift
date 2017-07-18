@@ -45,7 +45,7 @@ extension MainViewController {
     //  如果Swift 中将一个函数声明为 fileprivate ,那么这个函数不会被添加到方法列表中
     //  如果在private前面加上@objc, 那么该方法依然会添加到方法列表中, 而且又保护了私有性
      @objc fileprivate func composeBtnClick() {
-     print("点击了compose按钮")
+        
     }
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1107753DFFDF31DD8D505934 /* Pods_Swift_SinaDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C89C5967ADEB31B6D06A651 /* Pods_Swift_SinaDemo.framework */; };
+		E434FF0C1F1C38FD009FA822 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434FF0B1F1C38FD009FA822 /* CollectionViewModel.swift */; };
 		E4B04FCF1F0FBC5B004A318E /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B04FCE1F0FBC5B004A318E /* UIBarButtonItem-Extension.swift */; };
 		E4B04FD21F107657004A318E /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B04FD11F107657004A318E /* TitleButton.swift */; };
 		E4B04FD61F108254004A318E /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B04FD41F108254004A318E /* PopoverViewController.swift */; };
@@ -70,6 +71,7 @@
 		4FF44213E741C426C64703AD /* Pods-Swift_SinaDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_SinaDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift_SinaDemo/Pods-Swift_SinaDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5C89C5967ADEB31B6D06A651 /* Pods_Swift_SinaDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_SinaDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E28178497DE2C5CB094C99 /* Pods-Swift_SinaDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_SinaDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift_SinaDemo/Pods-Swift_SinaDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E434FF0B1F1C38FD009FA822 /* CollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		E4B04FCE1F0FBC5B004A318E /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem-Extension.swift"; path = "../UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		E4B04FD11F107657004A318E /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		E4B04FD41F108254004A318E /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				E4C3A07E1F09EFDF00FE3410 /* Home.storyboard */,
 				E4C3A0291F079E0C00FE3410 /* HomeTableViewController.swift */,
 				E4B050791F161AFB004A318E /* HomeViewCell.swift */,
+				E434FF0B1F1C38FD009FA822 /* CollectionViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 			files = (
 				E4B050221F13A24B004A318E /* Common.swift in Sources */,
 				E4B0502C1F14C8C6004A318E /* WelcomeViewController.swift in Sources */,
+				E434FF0C1F1C38FD009FA822 /* CollectionViewModel.swift in Sources */,
 				E4B050301F150570004A318E /* Status.swift in Sources */,
 				E4B04FCF1F0FBC5B004A318E /* UIBarButtonItem-Extension.swift in Sources */,
 				E4B050261F1450F7004A318E /* UserAccount.swift in Sources */,

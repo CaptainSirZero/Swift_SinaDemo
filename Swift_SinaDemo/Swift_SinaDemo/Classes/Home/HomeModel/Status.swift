@@ -16,8 +16,8 @@ class Status: NSObject {
     var mid             :   Int   =   0                    // 微博ID
     var user            :   User?
     var pic_urls        : [[String : String]]?              // 微博图片
-    
-    
+    var retweeted_status: Status?                           // 转发
+
     // MARK:- 将字典转成Model
     init(dic : [String : AnyObject]) {
         super.init()
@@ -25,6 +25,9 @@ class Status: NSObject {
         setValuesForKeys(dic)
         let userDic = dic["user"] as? [String : AnyObject]
         user = User(dict: userDic!)
+        if let retweetedStatusDic = dic["retweeted_status"] as? [String : AnyObject] {
+            retweeted_status = Status(dic: retweetedStatusDic)
+        }
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {}

@@ -13,14 +13,14 @@ class StatusViewModel: NSObject {
     // MARK:- 定义属性
     var status          :   Status?
     
-   // MARK:- 对数据处理的属性
+    // MARK:- 对数据处理的属性
     var sourceText      :   String?              // 处理来源
     var createAtText    :   String?              // 处理创建时间
     var verifiedImage   :   UIImage?             // 处理用户认证
     var mbrankImage     :   UIImage?             // 处理会员等级
     var profileURL      :   URL?                 // 处理用户头像URL
     var picsURL         : [URL] = [URL]()        // 微博图片urls
-    
+    var cellHeight      : CGFloat = 0            //单元格高度
     
     // MARK:- 自定义构造函数
     init(status : Status) {
@@ -65,7 +65,9 @@ class StatusViewModel: NSObject {
         profileURL = URL(string: profileURLString)
         
         // 6. 微博图片处理
-        guard let picArr = status.pic_urls else{
+        let picURLDicts = status.pic_urls?.count != 0 ? status.pic_urls : status.retweeted_status?.pic_urls
+        
+        guard let picArr = picURLDicts else{
             return
         }
         
@@ -75,11 +77,7 @@ class StatusViewModel: NSObject {
             }
             picsURL.append(URL(string : picURLString)!)
         }
-
-
-        
     }
-    
 }
 
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+import MJRefresh
 
 class HomeTableViewController: BaseTableViewController {
     
@@ -34,13 +36,14 @@ class HomeTableViewController: BaseTableViewController {
         }
         
         setupNavigationBar()
-        loadHomeInfo()
         
-        tableView.rowHeight = UITableViewAutomaticDimension
+        //        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
+        
+        setupHeadRefresh()
+        setupFooterView()
     }
 }
-
 
 // MARK:- 设置UI界面
 extension HomeTableViewController {
@@ -52,6 +55,26 @@ extension HomeTableViewController {
         titleBtn.setTitle("CaptainSir", for: .normal)
         titleBtn .addTarget(self, action: #selector(titleBtnClick), for: .touchUpInside)
         navigationItem.titleView = titleBtn
+    }
+    
+    func setupHeadRefresh() {
+        // 1. 创建headerView
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(loadNewStatuses))
+        
+        // 2. 设置header的属性
+        header?.setTitle("下拉刷新", for: .idle)
+        header?.setTitle("释放更新", for: .pulling)
+        header?.setTitle("加载中...", for: .refreshing)
+        
+        // 3. 设置tableview的header
+        tableView.mj_header = header
+        
+        // 4. 进入刷新状态
+        tableView.mj_header.beginRefreshing()
+    }
+    
+    func setupFooterView()  {
+        tableView.mj_footer = MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreStatus))
     }
 }
 
@@ -79,22 +102,74 @@ extension HomeTableViewController {
 
 // MARK:- 请求数据
 extension HomeTableViewController {
-    func loadHomeInfo() {
-        NetworkTool.loadHomeInfo { (reuslt : [[String : AnyObject]]?, error : NSError?) in
+    
+    @objc func loadNewStatuses() {
+        loadHomeInfo(isNewData: true)
+    }
+    
+    @objc func loadMoreStatus() {
+        loadHomeInfo(isNewData: false)
+    }
+    
+    func loadHomeInfo(isNewData : Bool) {
+        // 1. 获取since_id / max_id
+        var since_id = 0
+        var max_id = 0
+        
+        if isNewData {
+            since_id = statusviewModels.first?.status?.mid ?? 0
+        }
+        else {
+            max_id = statusviewModels.last?.status?.mid ?? 0
+            max_id = max_id == 0 ? 0 : (max_id - 1)
+        }
+        
+        // 请求数据
+        NetworkTool.loadHomeInfo(since_id: since_id, max_id: max_id) { (result: [[String : AnyObject]]?, error : NSError?) in
             // 1.获取可选类型数据
-            guard let resultArr = reuslt else {
+            guard let resultArr = result else {
                 return
             }
             
             // 2. 遍历微博对应的字典
+            var tempViewModel = [StatusViewModel]()
             for statusDic in resultArr {
                 let status = Status(dic: statusDic)
-                CBLog(message: "微博图片数目\(String(describing: status.pic_urls?.count))")
-                self.statusviewModels.append(StatusViewModel(status: status))
+                tempViewModel.append(StatusViewModel(status: status))
             }
             
-            // 3. 刷新表格
+            // 3. 将数据原有数据拼接到新数据后面
+            if isNewData {
+                self.statusviewModels = tempViewModel + self.statusviewModels
+            }
+            else {
+                self.statusviewModels = self.statusviewModels + tempViewModel
+            }
+            
+            // 3. 缓存图片
+            self.cacheImages(viewModels: self.statusviewModels)
+        }
+    }
+    
+    func cacheImages(viewModels : [StatusViewModel]) {
+        // 1. 创建group
+        let group = DispatchGroup()
+        
+        // 2. 缓存图片
+        for viewModel in viewModels {
+            for picURL in viewModel.picsURL {
+                group.enter()
+                SDWebImageManager.shared().imageDownloader?.downloadImage(with: picURL, options: [], progress: nil, completed: { (_, _, _, _) in
+                    group.leave()
+                })
+            }
+        }
+        
+        // 3. 刷新表格
+        group.notify(queue: DispatchQueue.main) {
             self.tableView.reloadData()
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
         }
     }
 }
@@ -103,7 +178,10 @@ extension HomeTableViewController {
 extension HomeTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell  = tableView.dequeueReusableCell(withIdentifier: "StatusCellI", for: indexPath) as! HomeViewCell
+        print("当前indexpath.row\(indexPath.row)")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StatusCellI") as! HomeViewCell
+        
+        //        let cell  = tableView.dequeueReusableCell(withIdentifier: "StatusCellI", for: indexPath) as! HomeViewCell
         cell.viewModel =  statusviewModels[indexPath.row]
         return cell
     }
@@ -111,6 +189,18 @@ extension HomeTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return statusviewModels.count
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let viewModel = statusviewModels[indexPath.row]
+        return viewModel.cellHeight
+    }
 }
+
+
+
+
+
+
+
 
 

@@ -44,7 +44,7 @@ extension NetworkTool{
         }
         
         let failureCallBack = { (task : URLSessionDataTask?, error : Error) in
-            //            print(error)
+
             callBack(nil, error)
         }
         
@@ -68,7 +68,7 @@ extension NetworkTool {
         
         NetworkTool .networkRequest(requestType: .POST, URLString: urlString, parameters: parametes as [String : AnyObject]) { (result : Any?, error : Error?) in
             if error != nil {
-                print(error!)
+                CBLog(message: error!)
                 return
             }
             
@@ -93,16 +93,16 @@ extension NetworkTool {
             
             finishedBack(result as? [String : AnyObject] , nil)
         }
-        
     }
 }
 
 // MARK:- 请求数据
 extension NetworkTool {
-    class func loadHomeInfo(finished : @escaping (_ result : [[String : AnyObject]]?, _ erro : NSError?) -> ()) {
+    class func loadHomeInfo(since_id : Int, max_id : Int ,finished : @escaping (_ result : [[String : AnyObject]]?, _ erro : NSError?) -> ()) {
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        let access_token = (UserAccountViewModel.shareIntance.account?.access_token)!
         
-        let parameters = ["access_token" : (UserAccountViewModel.shareIntance.account?.access_token)!]
+        let parameters = ["access_token" : access_token, "since_id" : "\(since_id)", "max_id" : "\(max_id)"]
         
         NetworkTool.networkRequest(requestType: .GET, URLString: urlString, parameters: parameters as [String : AnyObject]) { (result : Any?, error : Error?) in
             if error != nil {
