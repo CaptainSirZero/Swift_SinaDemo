@@ -11,9 +11,11 @@ import UIKit
 class ComposeViewController: UIViewController {
     // MARK:- 懒加载
     lazy var composeTitleView : ComposeTitleView = ComposeTitleView()
+    lazy var images : [UIImage] = [UIImage]()
     
     // MARK:- 控件属性
     @IBOutlet weak var textView: ComposeTextView!
+    @IBOutlet weak var picPickerCollectionView: PicPickerCollectionView!
     
     // MARK:- 约束属性
     @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
@@ -56,8 +58,10 @@ extension ComposeViewController {
         // MARK:- 监听键盘弹出frame
         NotificationCenter.default.addObserver(self, selector: #selector(KeyboardWillChangeFrame(notification:)), name: .UIKeyboardWillChangeFrame, object: nil)
         
-        // MARK:- 监听选择图片按钮点击
+        // MARK:- 监听选择图片按钮点击和删除图片按钮点击
         NotificationCenter.default.addObserver(self, selector: #selector(addPhotoClick), name: picPickerNotificationName, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(deletePhotoClick(notification: )), name: picDeleteNotificationName, object: nil)
     }
 }
 
@@ -81,6 +85,27 @@ extension ComposeViewController {
         present(ipc, animated: true, completion: nil)
         
     }
+    
+    func deletePhotoClick(notification : NSNotification) {
+        // 1. 获取要删除的图片
+        guard let image = notification.object as? UIImage else {
+            return
+        }
+        
+        // 2. 获取image在数组中的下标
+        guard let imageIndex = images.index(of: image) else {
+            return
+        }
+        
+        // 3. 删除对应的image
+        images.remove(at: imageIndex)
+        
+        // 4. 刷新数据
+        picPickerCollectionView.images = images
+
+    }
+    
+    
 }
 
 // MARK:- UIImagePickerControllerDelegate
@@ -91,9 +116,15 @@ extension ComposeViewController : UIImagePickerControllerDelegate, UINavigationC
         // 1.获取选中照片
         let image = info["UIImagePickerControllerOriginalImage"] as! UIImage
         
-        // 2.展示照片
+        // 2.加入数组
+        images.append(image)
+        
+        // 3.退出图片选择控制器
+        picker.dismiss(animated: true, completion: nil)
+        
+        // 4. 展示图片
+        picPickerCollectionView.images = images
     }
-    
 }
 
 

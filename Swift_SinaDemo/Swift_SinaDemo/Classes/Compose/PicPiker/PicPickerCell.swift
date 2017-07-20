@@ -10,6 +10,25 @@ import UIKit
 
 class PicPickerCell: UICollectionViewCell {
 
+    @IBOutlet weak var addPhotoBtn: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var deletePhotoBtn: UIButton!
+    
+    var image : UIImage? {
+        didSet {
+            if image != nil {
+                imageView.image = image
+                addPhotoBtn.isUserInteractionEnabled = false
+                deletePhotoBtn.isHidden = false
+            }
+            else {
+                imageView.image = nil
+                addPhotoBtn.isUserInteractionEnabled = true
+                deletePhotoBtn.isHidden = true
+            }
+        }
+    }
+    
     @IBAction func picPickerButtonClick(_ sender: Any) {
         NotificationCenter.default.post(name: picPickerNotificationName, object: nil)
         
@@ -17,8 +36,19 @@ class PicPickerCell: UICollectionViewCell {
     
 
     @IBAction func deletePicButtonClick(_ sender: Any) {
-        print("删除选择的图片")
+        NotificationCenter.default.post(name: picDeleteNotificationName, object: imageView.image)
     }
-    
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

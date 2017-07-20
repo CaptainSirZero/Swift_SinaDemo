@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController" customModule="Swift_SinaDemo" customModuleProvider="target">
             <connections>
+                <outlet property="picPickerCollectionView" destination="AOp-nr-i1i" id="hMM-XY-EQp"/>
                 <outlet property="picPickerHCons" destination="jzy-Oo-DKn" id="0cR-On-v56"/>
                 <outlet property="textView" destination="Yt8-Lm-wNM" id="Zag-68-34h"/>
                 <outlet property="toolBarBottomCons" destination="uaD-B6-i0b" id="C8y-ms-dso"/>
@@ -31,8 +32,8 @@
                     </connections>
                 </textView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="AOp-nr-i1i" customClass="PicPickerCollectionView" customModule="Swift_SinaDemo" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="436" width="320" height="0.0"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="0.0" y="480" width="320" height="0.0"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" id="jzy-Oo-DKn"/>
                     </constraints>
@@ -107,8 +108,8 @@
                 <constraint firstItem="Yt8-Lm-wNM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Fu1-pO-OwQ"/>
                 <constraint firstItem="AOp-nr-i1i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OzP-qQ-6P5"/>
                 <constraint firstAttribute="trailing" secondItem="g2r-c0-gX9" secondAttribute="trailing" id="P2d-hZ-IqK"/>
-                <constraint firstItem="g2r-c0-gX9" firstAttribute="top" secondItem="AOp-nr-i1i" secondAttribute="bottom" id="SFV-oE-Y0r"/>
                 <constraint firstItem="Yt8-Lm-wNM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Yv3-2k-BuY"/>
+                <constraint firstAttribute="bottom" secondItem="AOp-nr-i1i" secondAttribute="bottom" id="Zy2-eZ-z6s"/>
                 <constraint firstAttribute="trailing" secondItem="AOp-nr-i1i" secondAttribute="trailing" id="egF-PY-qqz"/>
                 <constraint firstAttribute="trailing" secondItem="Yt8-Lm-wNM" secondAttribute="trailing" id="hyj-fB-qqd"/>
                 <constraint firstAttribute="bottom" secondItem="g2r-c0-gX9" secondAttribute="bottom" id="uaD-B6-i0b"/>

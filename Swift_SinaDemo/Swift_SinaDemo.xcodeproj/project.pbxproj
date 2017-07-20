@@ -192,8 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				E434FF181F204325009FA822 /* PicPickerCollectionView.swift */,
-				E434FF1A1F204A2B009FA822 /* PicPickerCell.swift */,
 				E434FF1B1F204A2B009FA822 /* PicPickerCell.xib */,
+				E434FF1A1F204A2B009FA822 /* PicPickerCell.swift */,
 			);
 			path = PicPiker;
 			sourceTree = "<group>";
