@@ -15,6 +15,16 @@ class HomeTableViewController: BaseTableViewController {
     // MARK:- 懒加载
     lazy var titleBtn           : TitleButton = TitleButton()
     lazy var statusviewModels   : [StatusViewModel]    =  [StatusViewModel]()
+    lazy var tipLable           : UILabel = {
+        let tipLabel = UILabel()
+        tipLabel.frame = CGRect(x: 0, y: 30, width: UIScreen.main.bounds.width, height: 34)
+        tipLabel.textAlignment = NSTextAlignment.center
+        tipLabel.textColor = UIColor.white
+        tipLabel.backgroundColor = UIColor.orange
+        tipLabel.font = UIFont.systemFont(ofSize: 14)
+        tipLabel.isHidden = true
+        return tipLabel
+    }()
     /*
      注意: 在闭包中如果使用当前对象的属性或者调用方法,也需要加self
      两个地方需要使用self :
@@ -38,10 +48,11 @@ class HomeTableViewController: BaseTableViewController {
         setupNavigationBar()
         
         //        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 200
+        tableView.estimatedRowHeight = 100
         
         setupHeadRefresh()
         setupFooterView()
+        setupTipLabel()
     }
 }
 
@@ -76,6 +87,12 @@ extension HomeTableViewController {
     func setupFooterView()  {
         tableView.mj_footer = MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreStatus))
     }
+    
+    func setupTipLabel() {
+//        view.insertSubview(tipLable, at: 1)
+        navigationController?.view.insertSubview(tipLable, at: 1)
+    
+     }
 }
 
 // MARK:- 方法监听
@@ -147,7 +164,7 @@ extension HomeTableViewController {
             }
             
             // 3. 缓存图片
-            self.cacheImages(viewModels: self.statusviewModels)
+            self.cacheImages(viewModels: tempViewModel)
         }
     }
     
@@ -170,7 +187,24 @@ extension HomeTableViewController {
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
+            
+           self.showTipLabel(count: viewModels.count)
         }
+    }
+    
+    func showTipLabel(count : Int) {
+        self.tipLable.text = count == 0 ? "没有新数据" : "\(count)条新数据"
+        
+        self.tipLable.isHidden = false
+        UIView.animate(withDuration: 1.0, animations: {
+            self.tipLable.frame.origin.y = 64;
+        }, completion: { (_) in
+            UIView.animate(withDuration: 1.0, delay: 1, options: [], animations: {
+                self.tipLable.frame.origin.y = 30
+            }, completion: { (_) in
+                self.tipLable.isHidden = true
+            })
+        })
     }
 }
 
@@ -178,7 +212,6 @@ extension HomeTableViewController {
 extension HomeTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("当前indexpath.row\(indexPath.row)")
         let cell = tableView.dequeueReusableCell(withIdentifier: "StatusCellI") as! HomeViewCell
         
         //        let cell  = tableView.dequeueReusableCell(withIdentifier: "StatusCellI", for: indexPath) as! HomeViewCell

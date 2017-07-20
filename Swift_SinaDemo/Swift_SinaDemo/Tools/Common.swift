@@ -10,6 +10,9 @@ let access_token_sina   =       "2.00R4BrgCxJizjDa5117c56b00yi2hH"
  
 
  
+ // MARK:- 图片选择通知名称
+ let picPickerNotificationName : NSNotification.Name = NSNotification.Name(rawValue: "picPickerNotificationName")
+ 
  
  /*
 var path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first!

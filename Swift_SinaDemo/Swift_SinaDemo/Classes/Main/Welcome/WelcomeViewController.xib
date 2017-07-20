@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="464" height="729"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome" translatesAutoresizingMaskIntoConstraints="NO" id="70O-5y-CgY">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="70O-5y-CgY">
                     <rect key="frame" x="0.0" y="0.0" width="464" height="729"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="Mzx-aX-vMa">
@@ -54,7 +54,7 @@
         </view>
     </objects>
     <resources>
+        <image name="ad_background" width="16" height="16"/>
         <image name="avatar_default" width="90" height="90"/>
-        <image name="welcome" width="375" height="667"/>
     </resources>
 </document>

@@ -269,9 +269,12 @@
                 <navigationController id="PhH-0S-ADE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" image="首页-2" selectedImage="首页" id="M74-rc-CHi"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7HQ-Za-Zqn">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7HQ-Za-Zqn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="w5O-ed-5Rx" kind="relationship" relationship="rootViewController" id="JsE-Ob-1CO"/>
