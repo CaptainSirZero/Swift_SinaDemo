@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ComposeViewController: UIViewController {
     // MARK:- 懒加载
@@ -16,7 +17,7 @@ class ComposeViewController: UIViewController {
         self?.textView.insertEmoticon(emoticon : emoticon)
         self?.textViewDidChange((self?.textView)!)
     }
-
+    
     
     // MARK:- 控件属性
     @IBOutlet weak var textView: ComposeTextView!
@@ -26,8 +27,8 @@ class ComposeViewController: UIViewController {
     @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
     @IBOutlet weak var picPickerHCons: NSLayoutConstraint!
     
-
-// MARK:- 回调方法
+    
+    // MARK:- 回调方法
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -136,7 +137,40 @@ extension ComposeViewController {
     }
     
     @objc func sendItemClick() {
-        print (textView.getEmoticonString())
+        // 1. 回收键盘
+        textView.resignFirstResponder()
+        
+        // 2. 获取发送文字
+        let statusString = textView.getEmoticonString()
+        
+        // 3. 定义回调的闭包
+        let callBack = { (isSuccess : Bool) in
+            // MARK:- 由于该接口,新浪已经关闭了,所以为了测试,修改结果进行测试
+            if isSuccess {
+                SVProgressHUD.showError(withStatus: "发送微博失败!")
+                return
+            }
+            
+            SVProgressHUD.showSuccess(withStatus: "发送微博成功")
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        
+        // 3.获取用户选中的图片
+        if let image = images.first {
+            // 有图片
+            NetworkTool.sendStatus(statusString: statusString, image: image, isSuccess: callBack)
+        }
+        else {
+            // 无图片
+            NetworkTool.sendStatus(statusString: statusString, isSuccess : callBack)
+        }
+        
+        // 3. 发送Status
+        NetworkTool.sendStatus(statusString: statusString) { (isSuccess) in
+
+            
+        }
     }
     
     @objc func KeyboardWillChangeFrame(notification : NSNotification) {

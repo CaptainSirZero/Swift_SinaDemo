@@ -44,7 +44,7 @@ extension NetworkTool{
         }
         
         let failureCallBack = { (task : URLSessionDataTask?, error : Error) in
-
+            
             callBack(nil, error)
         }
         
@@ -118,3 +118,54 @@ extension NetworkTool {
         }
     }
 }
+
+
+// MARK:- 发送微博纯文字,该接口新浪已经禁止了
+extension NetworkTool {
+   class func sendStatus(statusString : String, isSuccess : @escaping (_ isSuccess : Bool) -> ()) {
+        // 1. 获取链接
+        let urlString = "https://api.weibo.com/2/statuses/update.json"
+        
+        // 2. 获取请求参数
+        let parameters = [ "status" : statusString]
+        
+        // 3. 发送请求
+        NetworkTool.networkRequest(requestType: .POST, URLString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) in
+            if result != nil {
+                isSuccess(true)
+            }
+            else {
+                isSuccess(false)
+            }
+        }
+    }
+}
+
+// MARK:- 发送微博,文字和图片,该接口新浪已经禁止了
+extension NetworkTool {
+    class func sendStatus(statusString : String,image: UIImage , isSuccess : @escaping (_ isSuccess : Bool) -> ()) {
+        // 1. 获取链接
+        let urlString = "https://api.weibo.com/2/statuses/upload.json"
+        
+        // 2. 获取请求参数
+        let parameters = [ "status" : statusString] as [String : AnyObject]
+        
+        // 3. 将图片转城二进制数据
+        let imageData = UIImageJPEGRepresentation(image, 0.5)
+        if imageData != nil {
+            // 3. 发送请求
+            NetworkTool.shareInstance.post(urlString, parameters: parameters, constructingBodyWith: { (afMultipartFormData) in
+                afMultipartFormData.appendPart(withFileData: imageData!, name: "pic", fileName: "weibo.image", mimeType: "image/png")
+            }, progress: nil, success: { (_, _) in
+                isSuccess(true)
+            }) { (_, _) in
+                isSuccess(false)
+            }
+        }
+ 
+
+    }
+}
+
+
+
