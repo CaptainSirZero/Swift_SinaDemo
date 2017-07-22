@@ -12,6 +12,11 @@ class ComposeViewController: UIViewController {
     // MARK:- 懒加载
     lazy var composeTitleView : ComposeTitleView = ComposeTitleView()
     lazy var images : [UIImage] = [UIImage]()
+    lazy var emoticonVC :EmoticonController = EmoticonController {[weak self] (emoticon) in
+        self?.textView.insertEmoticon(emoticon : emoticon)
+        self?.textViewDidChange((self?.textView)!)
+    }
+
     
     // MARK:- 控件属性
     @IBOutlet weak var textView: ComposeTextView!
@@ -21,7 +26,7 @@ class ComposeViewController: UIViewController {
     @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
     @IBOutlet weak var picPickerHCons: NSLayoutConstraint!
     
-    
+
 // MARK:- 回调方法
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +88,6 @@ extension ComposeViewController {
         ipc.delegate = self
         
         present(ipc, animated: true, completion: nil)
-        
     }
     
     func deletePhotoClick(notification : NSNotification) {
@@ -102,10 +106,7 @@ extension ComposeViewController {
         
         // 4. 刷新数据
         picPickerCollectionView.images = images
-
     }
-    
-    
 }
 
 // MARK:- UIImagePickerControllerDelegate
@@ -135,7 +136,7 @@ extension ComposeViewController {
     }
     
     @objc func sendItemClick() {
-        CBLog(message: "发送数据")
+        print (textView.getEmoticonString())
     }
     
     @objc func KeyboardWillChangeFrame(notification : NSNotification) {
@@ -163,6 +164,19 @@ extension ComposeViewController {
         UIView.animate(withDuration: 1.0) {
             self.view.layoutIfNeeded()
         }
+    }
+    
+    @IBAction func emoijButtonClick() {
+        // MARK:- 键盘切换之前需要退出键盘,设置textView.inputView = nil 表示键盘使用默认键盘
+        // 1. 退出键盘
+        textView.resignFirstResponder()
+        
+        // 2. 切换键盘
+        textView.inputView = textView.inputView != nil ? nil : emoticonVC.view
+        
+        // 3. 弹出键盘
+        textView.becomeFirstResponder()
+        
     }
 }
 
