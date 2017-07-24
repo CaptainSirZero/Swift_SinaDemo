@@ -169,7 +169,6 @@ extension ComposeViewController {
         // 3. 发送Status
         NetworkTool.sendStatus(statusString: statusString) { (isSuccess) in
 
-            
         }
     }
     
@@ -208,6 +207,7 @@ extension ComposeViewController {
         // 2. 切换键盘
         textView.inputView = textView.inputView != nil ? nil : emoticonVC.view
         
+        
         // 3. 弹出键盘
         textView.becomeFirstResponder()
         
@@ -227,3 +227,5 @@ extension ComposeViewController : UITextViewDelegate {
         textView.resignFirstResponder()
     }
 }
+
+

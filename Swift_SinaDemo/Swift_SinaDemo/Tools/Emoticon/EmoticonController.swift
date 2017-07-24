@@ -94,7 +94,7 @@ extension EmoticonController {
 
 // MARK:- 方法监听
 extension EmoticonController {
-    @objc func toolBarItemClick(barButtonItem : UIBarButtonItem) {
+    @objc open func toolBarItemClick(barButtonItem : UIBarButtonItem) {
         // 1. 获取点击toolBarItem的tag
         let indexPath = IndexPath(item: 0, section: barButtonItem.tag)
         

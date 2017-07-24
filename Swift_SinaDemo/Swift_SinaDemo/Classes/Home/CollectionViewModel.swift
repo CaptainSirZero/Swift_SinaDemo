@@ -23,6 +23,11 @@ extension CollectionViewModel : UICollectionViewDelegate, UICollectionViewDataSo
         cell.picUrl = picUrl[indexPath.row]
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let userInfo = [photoBrowserIndexPath : indexPath, photoBrowserUrls : picUrl] as [String : Any]
+        NotificationCenter.default.post(name: photoBrowserNotificationName, object: nil, userInfo: userInfo)
+    }
 }
 
 class picCollectionCell: UICollectionViewCell {

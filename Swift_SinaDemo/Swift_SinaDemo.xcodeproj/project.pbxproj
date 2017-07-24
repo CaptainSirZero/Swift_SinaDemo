@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1107753DFFDF31DD8D505934 /* Pods_Swift_SinaDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C89C5967ADEB31B6D06A651 /* Pods_Swift_SinaDemo.framework */; };
+		E43400051F259B2D009FA822 /* FindEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43400041F259B2D009FA822 /* FindEmoticon.swift */; };
+		E43400071F25A13E009FA822 /* HYLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43400061F25A13E009FA822 /* HYLabel.swift */; };
+		E434000A1F25D5E7009FA822 /* PhotoBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43400091F25D5E7009FA822 /* PhotoBrowserController.swift */; };
+		E434000C1F25E466009FA822 /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434000B1F25E466009FA822 /* PhotoBrowserCell.swift */; };
 		E434FF0C1F1C38FD009FA822 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434FF0B1F1C38FD009FA822 /* CollectionViewModel.swift */; };
 		E434FF101F1F7FC0009FA822 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434FF0E1F1F7FC0009FA822 /* ComposeViewController.swift */; };
 		E434FF111F1F7FC0009FA822 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E434FF0F1F1F7FC0009FA822 /* ComposeViewController.xib */; };
@@ -86,6 +90,10 @@
 		4FF44213E741C426C64703AD /* Pods-Swift_SinaDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_SinaDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift_SinaDemo/Pods-Swift_SinaDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5C89C5967ADEB31B6D06A651 /* Pods_Swift_SinaDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_SinaDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E28178497DE2C5CB094C99 /* Pods-Swift_SinaDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_SinaDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift_SinaDemo/Pods-Swift_SinaDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E43400041F259B2D009FA822 /* FindEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindEmoticon.swift; sourceTree = "<group>"; };
+		E43400061F25A13E009FA822 /* HYLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYLabel.swift; sourceTree = "<group>"; };
+		E43400091F25D5E7009FA822 /* PhotoBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserController.swift; sourceTree = "<group>"; };
+		E434000B1F25E466009FA822 /* PhotoBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserCell.swift; sourceTree = "<group>"; };
 		E434FF0B1F1C38FD009FA822 /* CollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		E434FF0E1F1F7FC0009FA822 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		E434FF0F1F1F7FC0009FA822 /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
@@ -192,6 +200,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E43400081F25D5D0009FA822 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				E43400091F25D5E7009FA822 /* PhotoBrowserController.swift */,
+				E434000B1F25E466009FA822 /* PhotoBrowserCell.swift */,
+			);
+			path = PhotoBrowser;
+			sourceTree = "<group>";
+		};
 		E434FF0D1F1F7FAB009FA822 /* Compose */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +240,7 @@
 				E434FF721F22F002009FA822 /* UITextView-Extension.swift */,
 				E434FF6B1F22F002009FA822 /* EmoticonController.swift */,
 				E434FF7A1F22F04A009FA822 /* EmoticonTextAttachment.swift */,
+				E43400041F259B2D009FA822 /* FindEmoticon.swift */,
 			);
 			path = Emoticon;
 			sourceTree = "<group>";
@@ -367,6 +385,7 @@
 		E4C3A0221F079B8500FE3410 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E43400081F25D5D0009FA822 /* PhotoBrowser */,
 				E4B0502E1F1504BE004A318E /* HomeModel */,
 				E4B04FD31F108243004A318E /* UIPopover */,
 				E4C3A07E1F09EFDF00FE3410 /* Home.storyboard */,
@@ -424,6 +443,7 @@
 				E4B04FD11F107657004A318E /* TitleButton.swift */,
 				E4B050231F13B101004A318E /* NetworkTool.swift */,
 				E4B050211F13A24B004A318E /* Common.swift */,
+				E43400061F25A13E009FA822 /* HYLabel.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -639,6 +659,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B050221F13A24B004A318E /* Common.swift in Sources */,
+				E43400071F25A13E009FA822 /* HYLabel.swift in Sources */,
 				E4B0502C1F14C8C6004A318E /* WelcomeViewController.swift in Sources */,
 				E434FF781F22F002009FA822 /* EmoticonPackage.swift in Sources */,
 				E434FF0C1F1C38FD009FA822 /* CollectionViewModel.swift in Sources */,
@@ -658,6 +679,7 @@
 				E4B04FD61F108254004A318E /* PopoverViewController.swift in Sources */,
 				E4B04FD21F107657004A318E /* TitleButton.swift in Sources */,
 				E434FF751F22F002009FA822 /* EmoticonViewCell.swift in Sources */,
+				E434000C1F25E466009FA822 /* PhotoBrowserCell.swift in Sources */,
 				E4B050741F15D58D004A318E /* NSDate-Extension.swift in Sources */,
 				E434FF151F1F8608009FA822 /* ComposeTextView.swift in Sources */,
 				E4C3A0911F0A67CB00FE3410 /* BaseTableViewController.swift in Sources */,
@@ -667,9 +689,11 @@
 				E4B050781F160C55004A318E /* StatusViewModel.swift in Sources */,
 				E4B0507A1F161AFB004A318E /* HomeViewCell.swift in Sources */,
 				E434FF771F22F002009FA822 /* EmoticonManager.swift in Sources */,
+				E43400051F259B2D009FA822 /* FindEmoticon.swift in Sources */,
 				E434FF791F22F002009FA822 /* UITextView-Extension.swift in Sources */,
 				E4B04FDB1F10D4F0004A318E /* PopoverAnimator.swift in Sources */,
 				E434FF7B1F22F04A009FA822 /* EmoticonTextAttachment.swift in Sources */,
+				E434000A1F25D5E7009FA822 /* PhotoBrowserController.swift in Sources */,
 				E4C3A02A1F079E0C00FE3410 /* HomeTableViewController.swift in Sources */,
 				E4C39FF31F0793E200FE3410 /* AppDelegate.swift in Sources */,
 				E4C3A02C1F079E1500FE3410 /* MessageTableViewController.swift in Sources */,

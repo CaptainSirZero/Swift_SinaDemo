@@ -53,6 +53,7 @@ class HomeTableViewController: BaseTableViewController {
         setupHeadRefresh()
         setupFooterView()
         setupTipLabel()
+        setupNotification()
     }
 }
 
@@ -93,6 +94,10 @@ extension HomeTableViewController {
         navigationController?.view.insertSubview(tipLable, at: 1)
     
      }
+    
+    func setupNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(showPhtotoBrowser(note:)), name: photoBrowserNotificationName, object: nil)
+    }
 }
 
 // MARK:- 方法监听
@@ -114,6 +119,19 @@ extension HomeTableViewController {
         
         // 4. 弹出控制器
         present(popoverVC, animated: true, completion: nil)
+    }
+    
+    @objc fileprivate func showPhtotoBrowser(note : NSNotification) {
+        
+        // 1. 获取对应的indexpath 和urls
+        let index = note.userInfo?[photoBrowserIndexPath] as! IndexPath
+        let urls = note.userInfo?[photoBrowserUrls] as! [URL]
+        
+        // 2. 创建photoBrowser控制器
+        let photoBrowserVC = PhotoBrowserController(indexPath: index, urls: urls)
+        
+        // 3. 模态出控制器
+        present(photoBrowserVC, animated: true, completion: nil)
     }
 }
 

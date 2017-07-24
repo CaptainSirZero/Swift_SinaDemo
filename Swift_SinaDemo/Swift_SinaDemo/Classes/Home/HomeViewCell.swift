@@ -23,9 +23,9 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var vipView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentLabel: HYLabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var retweetedContentLabel: UILabel!
+    @IBOutlet weak var retweetedContentLabel: HYLabel!
     @IBOutlet weak var retweetedBgView: UIView!
     
     // MARK:- 约束的属性
@@ -66,7 +66,7 @@ class HomeViewCell: UITableViewCell {
             sourceLabel.text = viewModel.sourceText
             
             // 8. 设置正文内容
-            contentLabel.text = viewModel.status?.text
+            contentLabel.attributedText = FindEmoticon.shareInstance.findAttributeString(statusText: viewModel.status?.text, font: contentLabel.font)
             
             // 8. 设置昵称的文字颜色
             screenNameLabel.textColor = viewModel.mbrankImage == nil ? UIColor.black : UIColor.orange
@@ -83,7 +83,8 @@ class HomeViewCell: UITableViewCell {
             // 11. 转发内容
             if viewModel.status?.retweeted_status != nil {
                 if let screenName = viewModel.status?.retweeted_status?.user?.screen_name, let retweetedText =  viewModel.status?.retweeted_status?.text {
-                    retweetedContentLabel.text = "@" + "\(screenName): " + retweetedText
+                    let retweetText = "@" + "\(screenName): " + retweetedText
+                    retweetedContentLabel.attributedText = FindEmoticon.shareInstance.findAttributeString(statusText: retweetText, font: retweetedContentLabel.font)
                     retweetedBgView.isHidden = false
                     
                     // 设置转发正文距离顶部的约束
